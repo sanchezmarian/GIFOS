@@ -1,0 +1,692 @@
+    @import 'variables';
+    @media screen and (min-width: 1024px) {
+        header {
+            display: flex;
+            width: 100%;
+            height: 90px;
+            padding: 0;
+            z-index: 1000;
+            img {
+                margin: unset;
+                width: 47px;
+                height: 47px;
+            }
+            .burger-btn {
+                display: none;
+            }
+            .close-btn {
+                display: none;
+            }
+            .logoCtn {
+                margin-left: 6%;
+            }
+            nav {
+                display: flex;
+                width: 43%;
+                ul {
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-self: flex-end;
+                    width: 100%;
+                    li {
+                        display: flex;
+                        align-self: center;
+                        margin: 0 4%;
+                        &:first-child {
+                            margin-left: unset;
+                        }
+                        &:last-child {
+                            margin-right: unset;
+                        }
+                        a {
+                            text-align: justify;
+                            font-size: 13px;
+                            font-family: $montserrat;
+                            color: $violeta;
+                            text-decoration: none;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            body.dark & {
+                                color: #ffffff;
+                            }
+                        }
+                        .navOnclick {
+                            color: $gris-desktop;
+                        }
+                        .navOnclickGifo {
+                            width: 54px;
+                            height: 54px;
+                            display: inline-block;
+                            background-image: url(/images/CTA-crear-gifo-active.svg);
+                        }
+                        #crearGifo {
+                            width: 54px;
+                            height: 54px;
+                            display: inline-block;
+                            background-image: url(/images/button-crear-gifo.svg);
+                            &:hover {
+                                background-image: url(/images/CTA-crear-gifo-hover.svg);
+                            }
+                            &:active {
+                                background-image: url(/images/CTA-crear-gifo-active.svg);
+                            }
+                            body.dark & {
+                                background-image: url(/images/CTA-crear-gifo-modo-noc.svg);
+                                &:hover {
+                                    background-image: url(/images/CTA-crear-gifo-hover-modo-noc.svg);
+                                }
+                                &:active {
+                                    background-image: url(/images/CTA-crear-gifo-active-modo-noc.svg);
+                                }
+                            }
+                        }
+                        &:hover {
+                            border-bottom: 2px solid #50E3C2;
+                            &:last-child {
+                                border-bottom: unset;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        main {
+            align-items: center;
+            .home {
+                width: 100%;
+                padding-top: 5%;
+                h1 {
+                    width: 54%;
+                    font-size: 35px;
+                    line-height: 50px;
+                    text-align: center;
+                }
+                .people {
+                    max-width: 399px;
+                }
+                .search-cont {
+                    width: 55%;
+                    border-radius: 40px;
+                    .busqueda {
+                        display: flex;
+                        width: 100%;
+                        flex-flow: row wrap;
+                        justify-content: space-between;
+                        .search {
+                            padding-left: 2%;
+                            align-self: flex-start;
+                            text-align: left;
+                            &::placeholder {
+                                color: $gris-desktop;
+                            }
+                        }
+                    }
+                    .buscadorSugerencia {
+                        .sugerenciaCtn {
+                            width: 100%;
+                            p {
+                                padding-left: 2%;
+                                font-size: 16px;
+                                font-family: $roboto;
+                                color: $gris-desktop;
+                            }
+                            img {
+                                padding-left: 1%;
+                                width: 24px;
+                                height: 24px;
+                            }
+                        }
+                    }
+                }
+                .gifos {
+                    .titulo-busqueda {
+                        font-size: 35px;
+                    }
+                    .resultadoGifos {
+                        width: 100%;
+                        display: flex;
+                        flex-flow: row wrap;
+                        margin: auto;
+                        .gif {
+                            width: 260px;
+                            height: 200px;
+                            padding: unset;
+                            margin: 1%;
+                            &:hover {
+                                .filter {
+                                    display: initial;
+                                    z-index: 0;
+                                    top: 0;
+                                    left: 0;
+                                    z-index: 100;
+                                    background-color: $violeta;
+                                    opacity: 60%;
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                .btnGifs {
+                                    display: initial;
+                                }
+                                .namesGifs {
+                                    display: initial;
+                                    position: absolute;
+                                    bottom: 30px;
+                                    left: 18px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 90%;
+                                }
+                            }
+// buttons
+                            .btnGifs {
+                                display: flex;
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                                display: none;
+                                .ctnBtn {
+                                    width: 32px;
+                                    height: 32px;
+                                    background-color: white;
+                                    border-radius: 6px;
+                                    border: none;
+                                    opacity: 60%;
+                                }
+                                .favorite {
+                                    display: initial;
+                                    cursor: pointer;
+                                    &:hover {
+                                        opacity: unset;
+                                    }
+                                    .fa-heart {
+                                        color: $violeta;
+                                        font-size: 18px;
+                                    }
+                                    .fa-trash-alt {
+                                        color: $violeta;
+                                        font-size: 18px;
+                                    }
+                                }
+                                .download {
+                                    display: initial;
+                                    cursor: pointer;
+                                    margin: 0 10px;
+                                    &:hover {
+                                        opacity: unset;
+                                    }
+                                    .fa-download {
+                                        color: $violeta;
+                                        font-size: 18px;
+                                    }
+                                }
+                                .expand {
+                                    display: initial;
+                                    cursor: pointer;
+                                    &:hover {
+                                        opacity: unset;
+                                    }
+                                    .fa-expand-alt {
+                                        color: $violeta;
+                                        font-size: 18px;
+                                    }
+                                }
+                            }
+//gifos username title
+                            .namesGifs {
+                                display: none;
+                                .userName {
+                                    display: flex;
+                                    font-family: $roboto;
+                                    color: #ffffff;
+                                    font-size: 15px;
+                                    font-weight: normal;
+                                    text-align: left;
+                                }
+                                .titleGif {
+                                    display: flex;
+                                    font-family: $roboto;
+                                    font-weight: bold;
+                                    font-size: 16px;
+                                    margin-top: 5px;
+                                    color: #ffffff;
+                                    text-align: left;
+                                }
+                            }
+                        }
+                    }
+                }
+                .trends {
+                    h3 {
+                        font-size: 18px;
+                    }
+                    p {
+                        font-size: 16px;
+                        cursor: pointer;
+                        &:hover {
+                            color: rgb(168, 11, 168);
+                        }
+                    }
+                }
+            }
+            .trending {
+                width: 100%;
+                padding: 6% 0 9% 0;
+                h3 {
+                    font-size: 25px;
+                }
+                p {
+                    font-size: 18px;
+                    line-height: 21px;
+                    padding: 1% 0 2% 0;
+                }
+                .contAllCarrusel {
+                    .ctnSliderLeft {
+                        #slider-left {
+                            display: initial;
+                            width: 40px;
+                            height: 40px;
+                            left: 0;
+                            cursor: pointer;
+                        }
+                        #slider-left-hover {
+                            display: none;
+                        }
+                        &:hover {
+                            #slider-left-hover {
+                                display: initial;
+                            }
+                            #slider-left {
+                                display: none;
+                            }
+                        }
+                    }
+                    .ctnSliderRight {
+                        #slider-right {
+                            display: initial;
+                            width: 40px;
+                            height: 40px;
+                            right: 0;
+                            cursor: pointer;
+                        }
+                        #slider-right-hover {
+                            display: none;
+                        }
+                        &:hover {
+                            #slider-right-hover {
+                                display: initial;
+                            }
+                            #slider-right {
+                                display: none;
+                            }
+                        }
+                    }
+                    .contCarrusel {
+                        overflow: hidden;
+                        scroll-behavior: smooth;
+                        .carrusel {
+                            width: max-content;
+                            margin-top: 1%;
+                            .gif {
+                                width: 357px;
+                                height: 275px;
+                                margin: .3%;
+                                &:hover {
+                                    .filter {
+                                        display: initial;
+                                        z-index: 0;
+                                        top: 0;
+                                        left: 0;
+                                        z-index: 100;
+                                        background-color: $violeta;
+                                        opacity: 60%;
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                    .btnGifs {
+                                        display: initial;
+                                    }
+                                    .namesGifs {
+                                        display: initial;
+                                        position: absolute;
+                                        bottom: 30px;
+                                        left: 18px;
+                                        display: flex;
+                                        flex-direction: column;
+                                        width: 90%;
+                                    }
+                                }
+                                .btnGifs {
+                                    display: flex;
+                                    position: absolute;
+                                    right: 10px;
+                                    top: 10px;
+                                    display: none;
+                                    .ctnBtn {
+                                        width: 32px;
+                                        height: 32px;
+                                        background-color: white;
+                                        border-radius: 6px;
+                                        border: none;
+                                        opacity: 60%;
+                                        outline: none;
+                                    }
+                                    .fa-heart {
+                                        color: $violeta;
+                                        font-size: 18px;
+                                    }
+                                    .fa-download {
+                                        color: $violeta;
+                                        font-size: 18px;
+                                    }
+                                    .fa-expand-alt {
+                                        color: $violeta;
+                                        font-size: 18px;
+                                    }
+                                    .favorite {
+                                        display: initial;
+                                        cursor: pointer;
+                                        &:hover {
+                                            opacity: unset;
+                                        }
+                                    }
+                                    .download {
+                                        display: initial;
+                                        cursor: pointer;
+                                        margin: 0 10px;
+                                        &:hover {
+                                            opacity: unset;
+                                        }
+                                    }
+                                    .expand {
+                                        display: initial;
+                                        cursor: pointer;
+                                        &:hover {
+                                            opacity: unset;
+                                        }
+                                    }
+                                }
+//gifos username title
+                                .namesGifs {
+                                    display: none;
+                                    .userName {
+                                        display: flex;
+                                        font-family: $roboto;
+                                        color: #ffffff;
+                                        font-size: 15px;
+                                        font-weight: normal;
+                                        text-align: left;
+                                    }
+                                    .titleGif {
+                                        display: flex;
+                                        font-family: $roboto;
+                                        font-weight: bold;
+                                        font-size: 16px;
+                                        margin-top: 5px;
+                                        color: #ffffff;
+                                        text-align: left;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+//create gifos
+            .homeCrearGifo {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                padding-bottom: 60px;
+                body.dark & {
+                    background-color: $bg-dark;
+                }
+                .crearGifoBtn {
+                    color: $violeta;
+                    border: solid 1px $violeta;
+                    border-radius: 25px;
+                    background: transparent;
+                    font-weight: 600;
+                    align-self: center;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $violeta;
+                        color: white;
+                    }
+                    body.dark & {
+                        background-color: $bg-dark;
+                        color: #ffffff;
+                        border-color: #ffffff;
+                        &:hover {
+                            background-color: $violeta;
+                            color: #ffffff;
+                        }
+                    }
+                }
+                .actionBtn {
+                    position: absolute;
+                    top: 630px;
+                    right: 514px;
+                    width: 130px;
+                    height: 40px;
+                    margin-bottom: 40px;
+                }
+                #start {
+                    display: initial;
+                }
+                #record {
+                    display: none;
+                }
+                #finish {
+                    display: none;
+                }
+                #upload {
+                    display: none;
+                }
+                .cameraCtn {
+                    display: flex;
+                    align-self: center;
+                    .camera {
+                        position: relative;
+                        background-repeat: no-repeat;
+                        width: 124px;
+                        height: 165px;
+                        bottom: 29px;
+                        left: 40px;
+                        background-image: url(/images/camara.svg);
+                        body.dark & {
+                            background-image: url(/images/camara-modo-noc.svg);
+                        }
+                    }
+                    .light {
+                        background-repeat: no-repeat;
+                        width: 100px;
+                        height: 140px;
+                        position: relative;
+                        bottom: 10px;
+                        left: 40px;
+                        opacity: 50%;
+                        background-image: url(/images/light.svg);
+                        body.dark & {
+                            opacity: 70%;
+                        }
+                    }
+                }
+                .roll {
+                    width: 240px;
+                    height: 100px;
+                    background-repeat: no-repeat;
+                    align-self: flex-end;
+                    position: relative;
+                    bottom: 90px;
+                    left: 20px;
+                    background-image: url(/images/pelicula.svg);
+                    body.dark & {
+                        background-image: url(/images/pelicula-modo-noc.svg);
+                    }
+                }
+                .crearGifoCtn {
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                    flex-flow: column wrap;
+                    border-bottom: 5px solid $violeta;
+                    border-radius: 5px;
+                    margin: 2rem 0 5rem 0;
+                    padding-bottom: 70px;
+                    .white-p {
+                        font-size: 15px;
+                        font-family: $montserrat;
+                        line-height: 19px;
+                        color: #ffffff;
+                        font-weight: 800;
+                    }
+                    .progressCtn {
+                        margin: 0 auto;
+                        width: 688px;
+                        height: 390px;
+                        border: 1px solid $violeta;
+                        h1 {
+                            padding-top: 20px;
+                            margin: 0 auto;
+                            font-size: 25px;
+                            width: 60%;
+                            color: $violeta;
+                            font-weight: bold;
+                            align-self: center;
+                            line-height: 35px;
+                            span {
+                                color: $celeste;
+                            }
+                            body.dark & {
+                                color: #ffffff;
+                            }
+                        }
+                        p {
+                            font-size: 16px;
+                            font-family: $roboto;
+                            line-height: 29px;
+                            body.dark & {
+                                color: #ffffff;
+                            }
+                        }
+                        .step {
+                            width: 30px;
+                            height: 30px;
+                        }
+                        .steps {
+                            margin: 0 auto;
+                            width: 35%;
+                            padding-right: 50px;
+                            display: flex;
+                            justify-content: space-evenly;
+                            padding-top: 24px;
+                        }
+                        .counter {
+                            font-family: $montserrat;
+                            font-size: 1rem;
+                            color: $violeta;
+                            left: 540px;
+                            right: 0px;
+                            bottom: 30px;
+                            width: 110px;
+                            position: relative;
+                            cursor: pointer;
+                            &:hover {
+                                border-bottom: 2px solid $celeste;
+                            }
+                        }
+                        .crearGifoArticle {
+                            width: 100%;
+                            height: 100%;
+                            .loadingModal {
+                                background-color: transparentize(#572EE5, .3);
+                                width: 100%;
+                                height: 100%;
+                                top: 0;
+                                position: absolute;
+                                z-index: 500;
+                                display: flex;
+                                flex-flow: column nowrap;
+                                justify-content: center;
+                                align-items: center;
+                                .loader {
+                                    animation: spin 1s infinite linear;
+                                }
+                            }
+                            .videoCtn {
+                                margin: 0 auto;
+                                width: 90%;
+                                height: 80%;
+                                position: relative;
+                                bottom: 65px;
+                                #video {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                            .introVideo {
+                                width: 100%;
+                                height: 100%;
+                            }
+                            .accessCtn {
+                                width: 100%;
+                                height: 100%;
+                                position: relative;
+                                bottom: 310px;
+                            }
+                            .top-left-cube {
+                                position: relative;
+                                top: 20px;
+                                left: 20px;
+                                width: 27px;
+                                height: 25px;
+                                border-top: 1px solid $celeste;
+                                border-left: 1px solid $celeste;
+                            }
+                            .top-right-cube {
+                                position: relative;
+                                left: 638px;
+                                bottom: 5px;
+                                width: 27px;
+                                height: 25px;
+                                border-top: 1px solid $celeste;
+                                border-right: 1px solid $celeste;
+                            }
+                            .lower-left-cube {
+                                position: relative;
+                                top: 290px;
+                                left: 20px;
+                                width: 27px;
+                                height: 25px;
+                                border-bottom: 1px solid $celeste;
+                                border-left: 1px solid $celeste;
+                            }
+                            .lower-right-cube {
+                                position: relative;
+                                left: 638px;
+                                top: 265px;
+                                width: 27px;
+                                height: 25px;
+                                border-bottom: 1px solid $celeste;
+                                border-right: 1px solid $celeste;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        footer {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15%;
+            height: 116px;
+            .compartir {
+                margin-left: 1.5rem;
+            }
+        }
+    }

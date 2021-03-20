@@ -1,0 +1,97 @@
+@import 'variables';
+.expandActive {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 0 10%;
+    padding-bottom: 150px;
+    margin-top: 93px;
+    left: 0;
+    top: 0;
+    overflow: scroll;
+    margin-bottom: 100px;
+    body.dark & {
+        background-color: #000000;
+    }
+    .modal-close {
+        background-color: unset;
+        border: 0;
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        top: 10px;
+        right: 12%;
+        cursor: pointer;
+    }
+    .modal-gif {
+        width: 100%;
+        max-width: 400px;
+        max-height: 400px;
+        padding-top: 65px;
+    }
+    .ctn-expand-data {
+        display: flex;
+        justify-content: space-between;
+        max-width: 400px;
+        width: 100%;
+        height: 50px;
+        margin: 0 auto;
+        padding: 4% 0;
+        .expand-data-text {
+            max-width: 75%;
+            .text-user {
+                font-size: 13px;
+                font-family: $roboto;
+                text-align: left;
+                margin-bottom: 5px;
+                body.dark & {
+                    color: #ffffff;
+                }
+            }
+            .text-title {
+                font-size: 14px;
+                font-family: $montserrat;
+                text-align: left;
+                body.dark & {
+                    color: #ffffff;
+                }
+            }
+        }
+        .expand-data-button {
+            display: flex;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            .button-download-favorite {
+                width: 30px;
+                height: 30px;
+                background-color: unset;
+                border: 0;
+                cursor: pointer;
+                .fa-heart {
+                    color: $violeta;
+                    font-size: 18px;
+                    body.dark & {
+                        color: #ffffff;
+                    }
+                }
+                .fa-trash-alt {
+                    color: $violeta;
+                    font-size: 18px;
+                    body.dark & {
+                        color: #ffffff;
+                    }
+                }
+                .fa-download {
+                    color: $violeta;
+                    font-size: 18px;
+                    body.dark & {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}

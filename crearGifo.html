@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style-mobile.css">
+    <link rel="stylesheet" href="styles/style-desktop.css">
+    <link rel="stylesheet" href="styles/gifs.css">
+    <link rel="stylesheet" href="styles/darkMode.css">
+    <title>Crear Gifo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logoCtn"><img alt="logo" id="logo" class="logo"></a>
+        <input type="checkbox" id="checkbox" />
+        <label for="checkbox">
+            <a class="burger-btn"></a>
+            <a class="close-btn"></a>
+        </label>
+        <nav>
+            <ul>
+                <li><a id="switch">Modo Nocturno</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="misGifos.html">Mis GIFOS</a></li>
+                <li><a href="crearGifo.html" class="navOnclickGifo"></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+<!-- section create gif -->
+        <section class="homeCrearGifo">
+            <aside class="cameraCtn">
+                <a class="camera"></a>
+                <a class="light"></a>
+            </aside>
+            <section class="crearGifoCtn">
+                <article class="progressCtn">
+                    <div id="crearGifoArticle" class="crearGifoArticle">
+                        <div class="top-left-cube"></div>
+                        <div class="top-right-cube"></div>
+                        <div class="lower-left-cube"></div>
+                        <div class="lower-right-cube"></div>
+                        <div id="introVideo">
+                            <h1>Aquí podrás <br> crear tus propios <span>GIFOS</span></h1>
+                            <p>¡Crea tu GIFO en sólo 3 pasos! <br> (sólo necesitas una cámara para grabar un vídeo)</p>
+                        </div>
+                        <div class="videoCtn" id="videoCtn">
+                            <video id="video" autoplay></video>
+                        </div>
+                    </div>
+                    <div class="steps">
+                        <button class="crearGifoBtn step" id="step-1">1</button>
+                        <button class="crearGifoBtn step" id="step-2">2</button>
+                        <button class="crearGifoBtn step" id="step-3">3</button>
+                    </div>
+                    <h2 class="counter" id="counter"></h2>
+                </article>
+            </section>
+<!-- cam buttons -->
+            <aside class="roll"><a class="roll"></a></aside>
+                <button id="start" class="crearGifoBtn actionBtn">COMENZAR</button>
+                <button id="record" class="crearGifoBtn actionBtn">GRABAR</button>
+                <button id="finish" class="crearGifoBtn actionBtn">FINALIZAR</button>
+                <button id="upload" class="crearGifoBtn actionBtn">SUBIR GIF</button>
+        </section>
+    </main>
+    <footer>
+        <p class="title">Compartir en:</p>
+        <div class="compartir">
+            <a class="facebook" href="facebook.com"></a>
+            <a class="twitter" href="twitter.com"></a>
+            <a class="instagram" href="instagram.com"></a>
+        </div>
+        <p class="sub-title">&copy; GIFOS 2020 All Rights Reserved.</p>
+    </footer>
+</body>
+<script src="script/crearGifo.js"></script>
+<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+<script src="script/darkMode.js"></script>
+</html>
